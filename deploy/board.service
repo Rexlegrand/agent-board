@@ -1,0 +1,19 @@
+[Unit]
+Description=Board (terminaux d'agents)
+After=network.target
+
+[Service]
+User=__USER__
+WorkingDirectory=__DIR__
+Environment=HOME=__HOME__
+Environment=SHELL=/bin/bash
+Environment=PATH=__HOME__/.local/bin:/usr/local/bin:/usr/bin:/bin
+# Port local du tunnel SSH côté ordinateur (voir client/open-board.sh)
+Environment=BOARD_TUNNEL_PORTS=__TUNNEL__
+# Coffre Obsidian / mémoire partagée lue par la tuile « Mémoire »
+Environment=BOARD_MEMORY_DIR=__HOME__/memoire
+ExecStart=/usr/bin/node __DIR__/server.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+node_modules
+data/
+.url
+server.log
+layout.json
+captures/
+*.env
+!examples/*.env.example
+.DS_Store

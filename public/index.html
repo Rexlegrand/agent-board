@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Board</title>
+<link rel="stylesheet" href="/vendor/xterm.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/extras.css">
+<link rel="stylesheet" href="/music.css">
+</head>
+<body data-tool="select">
+<div id="vp"><div id="world"><svg id="wires"></svg></div></div>
+<div id="lasso"></div>
+
+<header id="top">
+  <div>
+    <button class="tb" id="bHome"></button>
+    <div class="tgroup"><button class="tb ghost" id="bRepo"></button><div class="sepv"></div><div id="tabs"></div><button class="tb icon ghost" id="bAddWs" title="Nouvel espace de travail"></button></div>
+    <button class="tb" id="bCloseRepo"></button>
+  </div>
+  <div>
+    <div class="tb" id="live" title="Agents vivants / plafond"><i></i><b>0</b><span class="dim">live</span></div>
+    <div class="tb" id="ram" title="Mémoire disponible (libre + inactive)"><span class="dim">RAM</span><b>–</b></div>
+    <button class="tb" id="bUsage" title="Usage et tokens"></button>
+    <button class="tb icon" id="bTools" title="Outils"></button>
+    <button class="tb icon" id="bSettings" title="Réglages"></button>
+    <div class="avatar" title="Moi"></div>
+  </div>
+</header>
+
+<nav id="left" class="rail"></nav>
+<nav id="right" class="rail"></nav>
+
+<div id="bottom">
+  <div id="thread"></div>
+  <div id="hint"><span>Try <b>“pass this task to codex”</b></span><button id="hintX">×</button></div>
+  <div id="pills"></div>
+  <div id="grab"></div>
+  <div id="cmd">
+    <div class="orb" id="cmdOrb"></div>
+    <input id="cmdIn" autocomplete="off" spellcheck="false" placeholder="Type a command · @ to direct…">
+    <button class="rb" id="bThread" title="Fil (Thread)"><span class="unread"></span></button>
+    <button class="rb send" id="bSend" title="Envoyer"></button>
+  </div>
+</div>
+<button class="tb" id="gitPill"></button>
+<div id="zoomPill"><button id="zOut">−</button><b id="zLbl" title="Tout voir">100%</b><button id="zIn">+</button></div>
+
+<aside id="git"></aside>
+<div id="resumeToast"></div>
+<div id="home"></div>
+<div id="scrim"></div>
+<div id="toast"></div>
+<input type="file" id="filePick" accept="image/*" hidden>
+
+<script src="/vendor/xterm.js"></script>
+<script src="/vendor/addon-fit.js"></script>
+<script src="/core.js"></script>
+<script src="/agents.js"></script>
+<script src="/git.js"></script>
+<script src="/usage.js"></script>
+<script src="/todo.js"></script>
+<script src="/draw.js"></script>
+<script src="/web.js"></script>
+<script src="/music.js"></script>
+<script src="/markdown.js"></script>
+<script src="/diagram.js"></script>
+<script src="/images.js"></script>
+<script>boot();</script>
+</body>
+</html>
